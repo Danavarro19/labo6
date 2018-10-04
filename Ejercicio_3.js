@@ -1,5 +1,6 @@
-function tipoDato(lista){
-    for(i in lista){
-        console.log(typeof lista[i]);
-    }
-}
+let listingTypes = (array) => array.map(element =>  typeof(element))
+                                   .reduce((dict, type) => {
+                                    dict[type] = dict[type] ?
+                                    dict[type] +1 : 1;
+                                    return dict;
+                                  }, {});
